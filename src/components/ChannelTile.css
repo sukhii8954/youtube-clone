@@ -1,0 +1,52 @@
+.channelTitle{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+    cursor: pointer;
+}
+
+.channelImg{
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    object-fit: contain;
+    margin-left: 100px;
+
+}
+
+.title_left{
+    flex: 0.3;
+}
+
+.Title_middle{
+    flex: 0.5;
+}
+
+.Title_right{
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+
+}
+
+.subscribe{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #606060;
+    background-color: rgb(219,219,219);
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.channelName{
+    font-size: 18px;
+}
+
+.bellIcon{
+    color: #606060 !important;
+    margin-left: 10px;
+    
+}

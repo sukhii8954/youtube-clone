@@ -1,0 +1,91 @@
+.parent_header{
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background-color: white;
+}
+
+.sidebar{
+    width: 16%;
+    position: fixed;
+    top:60px;
+    z-index: 50;
+    height: 92vh;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    left:0; 
+    background-color: white;
+    transition: 0.5s ease;
+}
+
+.sidebar.active{
+    left: -16%;
+}
+
+.sidebar hr{
+    height: 1px;
+    border: 0;
+    background-color: gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.sidebar_heading{
+    margin: 0 0 10px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgb(131, 131, 131);
+    font-weight: 550;
+}
+
+.footer{
+    padding: 10 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(75, 75, 75);
+    line-height: 20px;
+}
+
+.sidebar::-webkit-scrollbar{
+    width: 8px !important;
+    border-radius: 50% !important;
+}
+
+
+.sidebar::-webkit-scrollbar-track{
+  background-color: white !important;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+    background-color: white !important;
+
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb{
+    background-color: rgb(184 , 184, 184) !important;
+}
+
+.mini_sidebar{
+    width:5%;
+    position: fixed;
+    top: 60px;
+    z-index: 50;
+    height: 92vh;
+    background-color: white;
+    left: -100px;
+    transition: 0.5s ease;   
+}
+.mini_sidebar.active{
+    left: 0;
+}
+.miniDiv{
+    padding: 10px 0;
+    text-align: center;
+    font-size: 10px;
+    color: rgb(112, 112, 112);
+}
+
+.miniDiv:hover{
+    background-color: lightgray;
+}

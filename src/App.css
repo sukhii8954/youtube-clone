@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.searchPage{
+  margin-left: 15%;
+  background-color: rgb(235,235,235);
+  padding: 10px 80px;
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 30px;
+}
+
+.filterIcon{
+  margin-right: 5px;
+  color: #606060 !important;
+
+}
+
+.filterHeading{
+  font-size: 15px;
+  color: #606060;
+  font-weight: 700;
+
+}
+
+h4{
+color: rgb(37,37,37);
+font-weight: 500;
+}
+
+

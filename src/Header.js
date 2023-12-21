@@ -21,12 +21,13 @@ import SidebarRow from './components/SidebarRow';
 import "./Sidebar.css"
 import Subscription from './components/Subscription';
 import {  Link, useNavigate } from 'react-router-dom';
+import { API_KEY } from './config';
 
 
 function Header() {
-    
-    const [searchval, setSearchVal] = useState("");
 
+    const [searchval, setSearchVal] = useState("");
+    const router=useNavigate();
     const togglesidebar = () => {
         const sidebar = document.querySelector(".sidebar");
         const Minisidebar = document.querySelector(".mini_sidebar");
@@ -37,8 +38,27 @@ function Header() {
             Minisidebar.classList.toggle('active');
         }
     }
-
-   const router=useNavigate();
+    
+    const handle_click = async() =>{
+        try{
+            const url = `https://youtube-v31.p.rapidapi.com/search?q=${searchval}&part=snippet%2Cid&maxResults=50&order=date `;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': API_KEY,
+                    'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+                }
+            }
+            const response = await fetch(url, options);
+            const result = await response.text();
+            // console.log(result);
+            localStorage.setItem("search_result" , result);
+            router(`/search/${searchval}`);
+        }catch(e){
+            console.log("API error" , e);
+        }
+    }
+   
     return (
 
         <div className="parent_header">
@@ -51,13 +71,9 @@ function Header() {
                     <div className="header_middle">
                         <input className="SearchInput" placeholder="Search" type="text" onChange={(e) => setSearchVal(e.target.value)} value={searchval} />
                        
-                          <Link to={`/search/${searchval}`} >
-                          <SearchIcon className="searchbtn"/>
-                          </Link>  
-                            
-
-                        
-
+                          <div onClick={()=>{handle_click()}}>
+                            <SearchIcon className="searchbtn"/>
+                          </div>
                     </div>
                     <MicIcon className="header_icons" />
                 </div>
